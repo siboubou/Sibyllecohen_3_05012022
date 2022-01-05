@@ -1,0 +1,21 @@
+{
+  "name": "p3_sibylle_cohen",
+  "version": "1.0.0",
+  "description": "Projet 3 Ohmyfood formation Openclassrooms",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siboubou/Sibyllecohen_3_05012022.git"
+  },
+  "author": "Sibylle Cohen",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/siboubou/Sibyllecohen_3_05012022/issues"
+  },
+  "homepage": "https://github.com/siboubou/Sibyllecohen_3_05012022#readme"
+}
