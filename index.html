@@ -5,15 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/dc8c63c8a2.js"
       crossorigin="anonymous"
     ></script>
     <title>Ohmyfood</title>
   </head>
+
   <body>
     <header>
       <img src="public/img/01_ohmyfood.png" alt="logo Ohmyfood" />
+    </header>
+    </header>
+    </header>
     </header>
     <div class="form-recherche-loc">
       <form action="#">
@@ -32,28 +39,28 @@
       <button class="btn btn--submit">Explorer nos restaurants</button>
     </section>
 
-    <section class="opt">
+    <section class="fct">
       <h1>Fonctionnement</h1>
-      <div class="opt-list">
-        <div class="opt-btn">
+      <div class="fct-list">
+        <div class="fct-opt">
           <div class="puce">1</div>
-          <div class="opt-btn btn">
+          <div class="fct-opt__btn">
             <i class="fas fa-mobile-alt"></i>
-            <div class="opt-btn__heading">Choisissez un restaurant</div>
+            <div class="fct-opt__heading">Choisissez un restaurant</div>
           </div>
         </div>
-        <div class="opt-btn">
+        <div class="fct-opt">
           <div class="puce">2</div>
-          <div class="opt-btn btn">
+          <div class="fct-opt__btn">
             <i class="fas fa-list-ul"></i>
-            <div class="opt-btn__heading">Composez votre menu</div>
+            <div class="fct-opt__heading">Composez votre menu</div>
           </div>
         </div>
-        <div class="opt-btn">
+        <div class="fct-opt">
           <div class="puce">3</div>
-          <div class="opt-btn btn">
+          <div class="fct-opt__btn">
             <i class="fas fa-store"></i>
-            <div class="opt-btn__heading">Dégustez au restaurant</div>
+            <div class="fct-opt__heading">Dégustez au restaurant</div>
           </div>
         </div>
       </div>
@@ -63,44 +70,52 @@
       <h1>Restaurants</h1>
       <div class="restau-list">
         <div class="card-restau">
-          <div class="card-restau__img">
-            <img
-              src="public/img/lapalettedugout.jpg"
-              alt="Photo de la Palette du goût"
-            />
-          </div>
-          <div class="card-restau__nom">La palette du goût</div>
-          <div class="card-restau__loc">Ménilmontant</div>
+          <a href="page01_gout.html">
+            <div class="card-restau__img">
+              <img
+                src="public/img/lapalettedugout.jpg"
+                alt="Photo de la Palette du goût"
+              />
+            </div>
+            <div class="card-restau__nom">La palette du goût</div>
+            <div class="card-restau__loc">Ménilmontant</div>
+          </a>
         </div>
         <div class="card-restau">
-          <div class="card-restau__img">
-            <img
-              src="public/img/lanoteenchantee.jpg"
-              alt="Photo de la Note enchantée"
-            />
-          </div>
-          <div class="card-restau__nom">La note enchantée</div>
-          <div class="card-restau__loc">Charonne</div>
+          <a href="page02_enchantée.html">
+            <div class="card-restau__img">
+              <img
+                src="public/img/lanoteenchantee.jpg"
+                alt="Photo de la Note enchantée"
+              />
+            </div>
+            <div class="card-restau__nom">La note enchantée</div>
+            <div class="card-restau__loc">Charonne</div>
+          </a>
         </div>
         <div class="card-restau">
-          <div class="card-restau__img">
-            <img
-              src="public/img/alafrancaise.jpg"
-              alt="Photo de A la française"
-            />
-          </div>
-          <div class="card-restau__nom">À la française</div>
-          <div class="card-restau__loc">Cité Rouge</div>
+          <a href="page03_française.html">
+            <div class="card-restau__img">
+              <img
+                src="public/img/alafrancaise.jpg"
+                alt="Photo de A la française"
+              />
+            </div>
+            <div class="card-restau__nom">À la française</div>
+            <div class="card-restau__loc">Cité Rouge</div>
+          </a>
         </div>
         <div class="card-restau">
-          <div class="card-restau__img">
-            <img
-              src="public/img/ledelicedessens.jpg"
-              alt="Photo de Le délice des sens"
-            />
-          </div>
-          <div class="card-restau__nom">Le délice des sens</div>
-          <div class="card-restau__loc">Folie-Méricourt</div>
+          <a href="page04_délice.html">
+            <div class="card-restau__img">
+              <img
+                src="public/img/ledelicedessens.jpg"
+                alt="Photo de Le délice des sens"
+              />
+            </div>
+            <div class="card-restau__nom">Le délice des sens</div>
+            <div class="card-restau__loc">Folie-Méricourt</div>
+          </a>
         </div>
       </div>
     </section>
