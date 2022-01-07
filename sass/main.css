@@ -1,0 +1,106 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.heading {
+  font-family: 'Shrikhand', cursive;
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.card {
+  font-size: 1.1rem;
+}
+
+.btn {
+  padding: 1rem;
+  color: white;
+  background: linear-gradient(-10deg, #9356DC, #FF79DA);
+  border-radius: 35px;
+}
+
+.header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input {
+  background: #EAEAEA;
+  height: 50px;
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: inset 0px 4px 9px -6px #4e4e4e;
+          box-shadow: inset 0px 4px 9px -6px #4e4e4e;
+}
+
+.input__loc {
+  border: 0;
+  background: #EAEAEA;
+  margin-left: 0.8rem;
+}
+
+.intro {
+  background: #F6F6F6;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.intro h1 {
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.intro div {
+  padding: 2rem;
+}
+/*# sourceMappingURL=main.css.map */

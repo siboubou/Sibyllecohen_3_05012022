@@ -1,0 +1,7 @@
+.header
+{
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    @include display-center;
+}
