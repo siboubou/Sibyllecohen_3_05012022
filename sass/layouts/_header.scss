@@ -1,7 +1,9 @@
 .header
 {
-    box-sizing: border-box;
     height: 60px;
     width: 100%;
     @include display-center;
+    &__heading{
+        font-size: 2rem;
+    }
 }

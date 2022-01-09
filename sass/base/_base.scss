@@ -1,18 +1,18 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
-body
-{
-    box-sizing: border-box;
-    width: 100%;
-    margin:0;
+
+section,
+footer {
+  padding: 2rem 1rem 2rem 1rem;
+  margin: auto;
+  height: auto;
 }
-a
-{
-    text-decoration: none;
-    color: unset;
+a {
+  text-decoration: none;
+  color: unset;
 }

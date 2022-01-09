@@ -1,6 +1,8 @@
 @mixin display-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin shadow {
+  box-shadow: 0px 5px 10px 2px rgb($color-shaddow, 0.3);
 }

@@ -17,11 +17,9 @@
 
   <body>
     <header class="header">
-      <h1 class="heading">ohmyfood</h1>
+      <div class="heading header__heading ">ohmyfood</div>
     </header>
-    </header>
-    </header>
-    </header>
+    
     <div class="input">
       <form action="#">
         <i id="input__logo" class="fas fa-map-marker-alt"></i>
@@ -32,6 +30,7 @@
         />
       </form>
     </div>
+    <main>
 
     <section class="intro">
       <h1>Réservez le menu qui vous convient</h1>
@@ -41,35 +40,28 @@
 
     <section class="fonctionnement">
       <h1>Fonctionnement</h1>
-      <div class="opt-list">
-        <div class="opt">
-          
+      <div class="opt">
           <div class="opt-btn">
             <div class="opt-btn__puce">1</div>
             <i class="fas fa-mobile-alt"></i>
             <div class="opt-btn__txt">Choisissez un restaurant</div>
           </div>
+        <div class="opt-btn">
+          <div class="opt-btn__puce">2</div>
+            <i class="fas fa-list-ul"></i>
+            <div class="opt-btn__txt">Composez votre menu</div>
         </div>
         <div class="opt-btn">
-          <div class="opt__puce">2</div>
-          
-            <i class="fas fa-list-ul"></i>
-            <div class="opt__txt">Composez votre menu</div>
-          
-        </div>
-        <div class="opt-list">
-          <div class="opt__puce">3</div>
-          <div class="opt__btn">
+          <div class="opt-btn__puce">3</div>
             <i class="fas fa-store"></i>
-            <div class="opt__txt">Dégustez au restaurant</div>
-          </div>
+            <div class="opt-bnt__txt">Dégustez au restaurant</div>
         </div>
       </div>
     </section>
 
-    <section class="restau">
+    <section class="list">
       <h1>Restaurants</h1>
-      <div class="restau-list">
+      <div class="list-card">
         <div class="card">
           <a href="page01_gout.html">
             <div class="card__img">
@@ -77,7 +69,8 @@
                 src="public/img/lapalettedugout.jpg"
                 alt="Photo de la Palette du goût"
               />
-              <div class="card__contain">
+            </div>
+            <div class="card__contain">
               <div class="card__txt">
                 <h2 class="card__title">La palette du goût</h2>
                 <p class="card__p" >Ménilmontant</p>
@@ -85,8 +78,7 @@
               <div class="card__logo">
                 <i class="far fa-heart"></i>
               </div>
-              </div>
-
+            </div>
           </a>
         </div>
         <div class="card">
@@ -96,7 +88,8 @@
                 src="public/img/lanoteenchantee.jpg"
                 alt="Photo de la Note enchantée"
               />
-              <div class="card__contain">
+            </div>
+            <div class="card__contain">
                 <div class="card__txt">
                   <h2 class="card__title">La note enchantée</h2>
                   <p class="card__p" >Charonne</p>
@@ -104,7 +97,7 @@
                 <div class="card__logo">
                   <i class="far fa-heart"></i>
                 </div>
-                </div>
+            </div>
           </a>
         </div>
         <div class="card">
@@ -123,7 +116,7 @@
               <div class="card__logo">
                 <i class="far fa-heart"></i>
               </div>
-              </div>
+            </div>
           </a>
         </div>
         <div class="card">
@@ -142,17 +135,18 @@
               <div class="card__logo">
                 <i class="far fa-heart"></i>
               </div>
-              </div>
+            </div>
           </a>
         </div>
       </div>
     </section>
-    <footer>
-      <img src="public/img/01_ohmyfood.png" alt="logo Ohmyfood" />
-      <ul>
-        <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-        <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
-        <li>Mentions légales</li>
+  </main>
+    <footer class="footer">
+      <h2 class="footer__heading heading ">ohmyfood</h2>
+      <ul class="footer__ul">
+        <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+        <li><a href="#"></a><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+        <li><a href="#">Mentions légales</a></li>
         <li><a href="mailto:ohmyfood@gmail.com"></a>Contact</li>
       </ul>
     </footer>

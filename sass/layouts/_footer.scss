@@ -1,0 +1,16 @@
+.footer {
+  background: $color-bg-dark;
+  color: $color-white;
+  &__ul {
+    list-style: none;
+    margin-top: 1rem;
+  }
+  li {
+    padding: 0.2rem;
+    i {
+      width: 15px;
+      height: 15px;
+      padding-right: 10px;
+    }
+  }
+}

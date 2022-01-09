@@ -1,14 +1,13 @@
-.input
-{
-    background: $color-bg-input;
-    height: 50px;
-    width: 100%;
-    margin: auto;
-    @include display-center;
-    box-shadow: inset 0px 4px 9px -6px rgba($color-shaddow, 1) ;
-    &__loc{
-        border: 0;
-        background: $color-bg-input;
-        margin-left: 0.8rem;
-    }
+.input {
+  background: $color-bg-medium;
+  height: 50px;
+  width: 100%;
+  margin: auto;
+  @include display-center;
+  box-shadow: inset 0px 4px 9px -6px rgba($color-shaddow, 1);
+  &__loc {
+    border: 0;
+    background: $color-bg-medium;
+    margin-left: 0.8rem;
+  }
 }
