@@ -1,40 +1,49 @@
 /*Les boutons type submit*/
 .btn {
-  padding: 0.9rem 1.2rem 0.9rem 1.2rem;
+  padding: 1rem 1rem;
   color: $color-white;
   background: linear-gradient(-10deg, $color-primary, $color-secondary);
   border-radius: 30px;
   @include shadow;
+  &--submit{
+    padding: 1rem 3.5rem;
+  }
+  &:hover{
+    background-color: lighten($color: #000000, $amount: 10%);
+  }
 }
-
-/*Les boutons d'option*/
-.opt-btn {
-  box-sizing: border-box;
-  background-color: $color-bg-light;
+/*Les boutons de type select*/
+.select-btn{
+  background-color: white;
+  max-width: 350px;
+  height: 70px;
   padding: 1rem;
-  margin: 1.5rem 1rem 1.5rem 1rem;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  position: relative;
+  margin: 1rem 0;
+  border-radius: 15px;
   @include shadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
-  &__puce {
-    background: $color-primary;
-    color: $color-white;
-    font-weight: 300;
-    font-size: 0.9rem;
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-    border-radius: 50%;
-    @include display-center;
-    position: absolute;
-    left: -10px;
+  &__contain{
+    width: 85%;
   }
-  i {
-    font-size: 1.3rem;
-    padding: 1rem;
-    color: grey;
+  h2{
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+  } 
+  p{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0.3rem;
+    }
+  &__text{
+    text-overflow: ellipsis;
   }
-}
+  }
+  .opt-btn__price
+  {
+    font-weight: bold;
+  }

@@ -8,9 +8,13 @@
   li {
     padding: 0.2rem;
     i {
-      width: 15px;
-      height: 15px;
-      padding-right: 10px;
+      width: 6px;
+      height: 6px;
+      padding-right: 25px;
     }
+  }
+  &__heading
+  {
+    font-size: 1.2rem;
   }
 }

@@ -3,6 +3,19 @@
   &-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: auto;
+    @media screen and (min-width:768px){
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
   }
+
 }
+
+/*
+Je veux que Fontionnement et Restaurant fonctionnent de la même façon sous le nom de list
+mais qu'ils aient des background différents
+.list si contient item on veut un fond blanc
+si contient card on veut un fond …
+*/

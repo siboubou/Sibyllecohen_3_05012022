@@ -1,18 +1,19 @@
+html{
+    box-sizing: border-box;
+}
 *,
-*::after,
-*::before {
-  margin: 0;
+*:after,
+*:before {
+  margin: 0 auto;
   padding: 0;
   box-sizing: inherit;
 }
-
 section,
 footer {
-  padding: 2rem 1rem 2rem 1rem;
-  margin: auto;
+  padding: 40px 20px;
   height: auto;
 }
-a {
+a{
   text-decoration: none;
   color: unset;
 }

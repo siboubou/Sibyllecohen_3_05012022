@@ -1,120 +1,161 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ohmyfood Menu</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le délice des sens menu</title>
     <link rel="stylesheet" href="public/css/style.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/dc8c63c8a2.js"
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
-  <header>
-    <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-    <img src="public/img/01_ohmyfood.png" alt="logo Ohmyfood" />
-  </header>  
-  <div class="bg-img">
-    <img src="public/img/lapalettedugout.jpg" alt="Photo La Palette du Goût">
-  </div>
+  </head>
+  <body>
+    <header class="header header--page">
+      <div><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
+      <div class="heading header__heading">ohmyfood</div>
+      <div class="vide"><i class="fas fa-arrow-left"></i></div>
+    </header>
 
-  <div class="heading">
-    <h1>Le délice des sens</h1>
-    <i class="far fa-heart"></i>
-  </div>
-  
-  <section class="menu">
-  <div class="menu-part">
-    <h2 class="menu__subtitle">Entrées</h2>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Tartare de thon</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Assaisonné au yuzu</p>
-        <p class="menu-btn_price">25€</p>
+    <div class="heading-section">
+      <div class="heading-section__bg">
+        <img
+          src="public/img/lapalettedugout.jpg"
+          alt="Photo La Palette du Goût"
+        />
+      </div>
+      <div class="heading-section__contain">
+        <div class="heading">Le délice des sens </div>
+        <i id="icon-heart" class="far fa-heart"></i>
       </div>
     </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Bouchée de homard croustillant</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Et sa farandole de petits légumes</p>
-        <p class="menu-btn_price">35€</p>
+
+    <section class="menu">
+      <div class="menu-part">
+        <h2 class="menu__subtitle">Entrées</h2>
+        <hr>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Tartare de thon</h2>
+            <p class="select-btn__text">Assaisonné au yuzu
+            </p>
+          </div>
+          <div class="select-btn__price">25€</div>
+        </div>
+
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Bouchée de homard croustillant 
+            </h2>
+            <p class="select-btn__text">Et sa farandole de petits légumes
+            </p>
+          </div>
+          <div class="select-btn__price">35€</div>
+        </div>
+
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Velouté de cèpes 
+            </h2>
+            <p class="select-btn__text">Aux truffes
+            </p>
+          </div>
+          <div class="select-btn__price">20€</div>
+        </div>
+        
       </div>
-    </div>
-      <div class="menu-btn">
-        <h3 class="menu-btn_title">Velouté de cèpes</h3>
-        <div class="menu-btn_contain">
-          <p class="menu-btn_p">Aux truffes</p>
-          <p class="menu-btn_price">20€</p>
+      <div class="menu-part">
+        <h2 class="menu__subtitle">Plats</h2>
+        <hr>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Poulet rôti aux herbes de Provence 
+            </h2>
+            <p class="select-btn__text">Et sa crème de truffe
+            </p>
+          </div>
+          <div class="select-btn__price">35€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Langouste rôtie 
+            </h2>
+            <p class="select-btn__text">Et ses légumes de saison
+              </p>
+          </div>
+          <div class="select-bnt__price">35€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Côte de boeuf Angus 
+            </h2>
+            <p class="select-btn__text">Et sa purée de panais</p>
+          </div>
+          <div class="select-bnt__price">44€</div>
+        </div>
+
+      </div>
+      <div class="menu-part">
+        <h2 class="menu__subtitle">Desserts</h2>
+        <hr>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Farandole de desserts
+              </h2>
+            <p class="select-btn__text">Du chef
+            </p>
+          </div>
+          <div class="select-bnt__price">18€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Crème brulée 
+            </h2>
+            <p class="select-btn__text">Revisitée
+            </p>
+          </div>
+          <div class="select-bnt__price">22€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Tiramisu 
+            </h2>
+            <p class="select-btn__text">À la noisette
+            </p>
+          </div>
+          <div class="select-bnt__price">23€</div>
         </div>
       </div>
-      
-  
-  <div class="menu-part">
-    <h2 class="menu__subtitle">Plats</h2>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Poulet rôti aux herbes de Provence</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Et sa crème de truffe</p>
-        <p class="menu-btn_price">40€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Langouste rôtie</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Et ses légumes de saison
-        </p>
-        <p class="menu-btn_price">35€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Côte de boeuf Angus</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Et sa purée de panais</p>
-        <p class="menu-btn_price">44€</p>
-      </div>
-    </div>
-  <div class="menu-part">
-    <h2 class="menu__subtitle">Desserts</h2>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Farandole de desserts</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Du chef</p>
-        <p class="menu-btn_price">18€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Crème brulée</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Revisité</p>
-        <p class="menu-btn_price">22€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Tiramisu</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">À la noisette</p>
-        <p class="menu-btn_price">23€</p>
-      </div>
-    </div>
 
-    <div> <a class="btn btn--submit" href="">Commander</a></div>
-</section>
-  <button class="btn btn--submit">Commander</button>
-  </section>
-  <footer>
-    <img src="public/img/01_ohmyfood.png" alt="logo Ohmyfood" />
-    <ul>
-      <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-      <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
-      <li>Mentions légales</li>
-      <li><a href="mailto:ohmyfood@gmail.com"></a>Contact</li>
-    </ul>
-  </footer>
+      <div class="menu-submit"><a class="btn btn--submit" href="#">Commander</a></div>
+    </section>
+
+    <footer class="footer">
+      <h2 class="footer__heading heading">ohmyfood</h2>
+      <ul class="footer__ul">
+        <a href=""
+          ><li><i class="fas fa-utensils"></i>Proposer un restaurant</li></a
+        >
+        <a href=""
+          ><li><i class="fas fa-hands-helping"></i>Devenir partenaire</li></a
+        >
+        <a href=""><li>Mentions légales</li></a>
+        <li><a href="mailto:ohmyfood@gmail.com"></a>Contact</li>
+      </ul>
+    </footer>
+  </body>
+</html>
+
 
 </body>
 </html>

@@ -1,118 +1,157 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ohmyfood Menu</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À la française menu</title>
     <link rel="stylesheet" href="public/css/style.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/dc8c63c8a2.js"
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
+  </head>
+  <body>
+    <header class="header header--page">
+      <div><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
+      <div class="heading header__heading">ohmyfood</div>
+      <div class="vide"><i class="fas fa-arrow-left"></i></div>
+    </header>
 
-  <header>
-    <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-    <img src="public/img/01_ohmyfood.png" alt="logo Ohmyfood" />
-  </header>  
-  <div class="bg-img">
-    <img src="public/img/lapalettedugout.jpg" alt="Photo La Palette du Goût">
-  </div>
- 
-  <div class="heading">
-    <h1>La palette du goût</h1>
-    <i class="far fa-heart"></i>
-  </div>
-  <section class="menu">
-  <div class="menu-part">
-    <h2 class="menu__subtitle">Entrées</h2>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Tartare de poulpe acidulé</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Au zeste d'orange</p>
-        <p class="menu-btn_price">25€</p>
+    <div class="heading-section">
+      <div class="heading-section__bg">
+        <img
+          src="public/img/lapalettedugout.jpg"
+          alt="Photo La Palette du Goût"
+        />
+      </div>
+      <div class="heading-section__contain">
+        <div class="heading">À la française</div>
+        <i id="icon-heart" class="far fa-heart"></i>
       </div>
     </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Velouté de légumes d'antan</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Carotte, panais, topinambour</p>
-        <p class="menu-btn_price">35€</p>
+
+    <section class="menu">
+      <div class="menu-part">
+        <h2 class="menu__subtitle">Entrées</h2>
+        <hr>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Tartare de poulpe acidulé
+            </h2>
+            <p class="select-btn__text">Aux zestes d'orange
+            </p>
+          </div>
+          <div class="select-btn__price">25€</div>
+        </div>
+
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Velouté de légumes d'antan
+            </h2>
+            <p class="select-btn__text">Carotte, panais, topinambour
+            </p>
+          </div>
+          <div class="select-btn__price">35€</div>
+        </div>
+
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Soupe à l'oignon
+            </h2>
+            <p class="select-btn__text">Revisitée
+            </p>
+          </div>
+          <div class="select-btn__price">20€</div>
+        </div>
+
       </div>
-    </div>
-      <div class="menu-btn">
-        <h3 class="menu-btn_title">Soupe à l'oignon</h3>
-        <div class="menu-btn_contain">
-          <p class="menu-btn_p">Revisité</p>
-          <p class="menu-btn_price">20€</p>
+      <div class="menu-part">
+        <h2 class="menu__subtitle">Plats</h2>
+        <hr>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Coquilles Saint-Jacques
+            </h2>
+            <p class="select-btn__text">Accompagnées d'une purée de panais
+            </p>
+          </div>
+          <div class="select-bnt__price">40€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Magret de canard
+            </h2>
+            <p class="select-btn__text">Et parmentier de pommes de terre
+            </p>
+          </div>
+          <div class="select-bnt__price">35€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Pigeonneau d’Ille-et-Vilaine
+            </h2>
+            <p class="select-btn__text">Sur son lit de gnocchis aux légumes
+            </p>
+          </div>
+          <div class="select-bnt__price">44€</div>
         </div>
       </div>
-      
-  
-  <div class="menu-part">
-    <h2 class="menu__subtitle">Plats</h2>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Coquilles Saint-Jacques</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Accompagnées d'une purée de panais</p>
-        <p class="menu-btn_price">40€</p>
+      <div class="menu-part">
+        <h2 class="menu__subtitle">Desserts</h2>
+        <hr>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Pétales de violettes glacés
+            </h2>
+            <p class="select-btn__text">Et purée de noisettes
+            </p>
+          </div>
+          <div class="select-bnt__price">18€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Fondant au chocolat
+            </h2>
+            <p class="select-btn__text">Revisité</p>
+          </div>
+          <div class="select-bnt__price">22€</div>
+        </div>
+        <div class="select-btn">
+          <div class="select-btn__contain">
+            <h2 class="select-btn__title">Millefeuille croustillant
+            </h2>
+            <p class="select-btn__text">Myrtilles et pâte d’amande
+            </p>
+          </div>
+          <div class="select-bnt__price">23€</div>
+        </div>
       </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Magret de canard</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Et parmentier de pommes de terre</p>
-        <p class="menu-btn_price">35€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Pigeonneau d'Ille-et-Vilaine</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Sur son lit de gnocchis aux légumes</p>
-        <p class="menu-btn_price">44€</p>
-      </div>
-    </div>
-  <div class="menu-part">
-    <h2 class="menu__subtitle">Desserts</h2>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Pétales de violettes glacés</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Et purée de noisettes</p>
-        <p class="menu-btn_price">18€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Fondant au chocolat</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Revisité</p>
-        <p class="menu-btn_price">22€</p>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <h3 class="menu-btn_title">Millefeuille croustillant</h3>
-      <div class="menu-btn_contain">
-        <p class="menu-btn_p">Myrtille et pâte d'amande</p>
-        <p class="menu-btn_price">23€</p>
-      </div>
-    </div>
 
-    <div> <a class="btn btn--submit" href="">Commander</a></div>
-</section>
+      <div class="menu-submit"><a class="btn btn--submit" href="#">Commander</a></div>
+    </section>
 
-
-  <footer>
-    <img src="public/img/01_ohmyfood.png" alt="logo Ohmyfood" />
-    <ul>
-      <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-      <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
-      <li>Mentions légales</li>
-      <li><a href="mailto:ohmyfood@gmail.com"></a>Contact</li>
-    </ul>
-  </footer>
-</body>
+    <footer class="footer">
+      <h2 class="footer__heading heading">ohmyfood</h2>
+      <ul class="footer__ul">
+        <a href=""
+          ><li><i class="fas fa-utensils"></i>Proposer un restaurant</li></a
+        >
+        <a href=""
+          ><li><i class="fas fa-hands-helping"></i>Devenir partenaire</li></a
+        >
+        <a href=""><li>Mentions légales</li></a>
+        <li><a href="mailto:ohmyfood@gmail.com"></a>Contact</li>
+      </ul>
+    </footer>
+  </body>
 </html>
