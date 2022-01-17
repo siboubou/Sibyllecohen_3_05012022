@@ -234,7 +234,10 @@ a {
   margin: 0 1rem;
   color: grey;
 }
-.item i:hover {
+.item:hover {
+  background: #efe6fa;
+}
+.item:hover #icon-item {
   color: #9356dc;
 }
 @media screen and (min-width: 768px) {
@@ -250,10 +253,6 @@ a {
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
-}
-
-.item:hover {
-  background: #efe6fa;
 }
 
 .header {

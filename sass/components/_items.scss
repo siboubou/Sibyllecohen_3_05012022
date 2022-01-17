@@ -33,10 +33,14 @@
       font-size: 1.3rem;
       margin: 0 1rem;
       color: grey;
-      &:hover{
+    }
+    &:hover{
+      background: lighten($color: $color-primary, $amount: 34);
+      #icon-item{
         color: $color-primary;
       }
     }
+
     @media screen and (min-width:768px){
     margin: 1.5rem 0.4rem;
   }
@@ -48,8 +52,4 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
-}
-
-.item:hover{
-  background: lighten($color: $color-primary, $amount: 34);
 }
