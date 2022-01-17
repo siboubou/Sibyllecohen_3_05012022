@@ -3,9 +3,11 @@
   height: 50px;
   @include display-center;
   box-shadow: inset 0px 4px 9px -6px rgba($color-shaddow, 1);
+  
   &__loc {
     border: 0;
     background: $color-bg-medium;
-    margin-left: 0.8rem;
+    font-size: 1.1rem;
+    text-align: center;  
   }
 }

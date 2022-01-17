@@ -1,15 +1,18 @@
 .footer {
   background: $color-bg-dark;
   color: $color-white;
+  padding: 2rem 1.5rem;
+  height: auto;
+  
   &__ul {
     list-style: none;
     margin-top: 1rem;
   }
   li {
     padding: 0.2rem;
-    i {
-      width: 6px;
-      height: 6px;
+    i{
+      width: 15px;
+      font-size: 15px;
       padding-right: 25px;
     }
   }
@@ -18,3 +21,4 @@
     font-size: 1.2rem;
   }
 }
+

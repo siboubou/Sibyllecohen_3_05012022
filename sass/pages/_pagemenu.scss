@@ -33,12 +33,16 @@
     background-color: $color-bg-light;
     width: 100%;
     margin: 0 auto;
-    
-    
     &__subtitle
     {
         text-transform: uppercase;
-        font-weight: 300;padding-bottom: 0.5rem;
+        font-weight: 300;
+        padding-bottom: 0.5rem;
+        font-size: 1.1rem;
+        @media screen and (min-width:768px){
+          font-size: 1.4rem;
+        }
+
     }
     hr{
        background-color:$color-tertiary; 
@@ -50,12 +54,19 @@
     &-part
     {
       margin-bottom: 2rem;
-
+      @media screen and (min-width:768px){
+        width: 32%;
+       }
     }
 }
-
+.menu-contain{
+  @media screen and (min-width:768px){
+    display: flex;
+    justify-content: space-between;
+   }
+}
 .menu-submit{
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1rem;
     }
 

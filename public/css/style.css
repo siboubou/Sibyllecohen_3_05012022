@@ -6,20 +6,24 @@ html {
 *,
 *:after,
 *:before {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-section,
-footer {
-  padding: rem(40) rem(20);
+section {
+  padding: 2rem 1.5rem;
   height: auto;
 }
-
-a {
-  text-decoration: none;
-  color: unset;
+@media screen and (min-width: 768px) {
+  section {
+    padding: 2rem 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section {
+    padding: 2rem 2.5rem;
+  }
 }
 
 body {
@@ -30,40 +34,70 @@ body {
 
 .heading {
   font-family: "Shrikhand", cursive, sans-serif;
-  font-size: 26px;
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 1.7em;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2.4em;
+  }
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.7em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+h3 {
+  font-size: 1em;
 }
 
 p {
   font-weight: 300;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 /*Les boutons type submit*/
 .btn {
   padding: 1rem 1rem;
   color: white;
-  background: linear-gradient(-10deg, #9356dc, #ff79da);
+  background-image: linear-gradient(-10deg, #9356dc, #ff79da);
   border-radius: 30px;
   box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
 }
 .btn--submit {
   padding: 1rem 3.5rem;
 }
+
 .btn:hover {
-  background-color: #1a1a1a;
+  opacity: 0.8;
 }
 
 /*Les boutons de type select*/
 .select-btn {
   background-color: white;
-  max-width: 350px;
+  width: 100%;
   height: 70px;
   padding: 1rem;
   margin: 1rem 0;
@@ -76,38 +110,39 @@ p {
 .select-btn__contain {
   width: 85%;
 }
-.select-btn h2 {
+.select-btn__title {
+  font-size: 1.1rem;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 768px) {
+  .select-btn__title {
+    font-size: 1rem;
+  }
 }
 .select-btn p {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0.3rem;
+  font-size: 0.9rem;
 }
 .select-btn__text {
   text-overflow: ellipsis;
 }
-
-.opt-btn__price {
+.select-btn__price {
   font-weight: bold;
 }
 
 .card {
-  width: 90%;
-  max-width: 320px;
-  height: 240px;
+  width: 100%;
+  height: 250px;
   border-radius: 15px;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin: 0.5rem auto;
+  position: relative;
   box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
-}
-@media screen and (min-width: 768px) {
-  .card {
-    margin: 1rem;
-  }
 }
 .card__img {
   width: 100%;
@@ -136,9 +171,29 @@ p {
   font-weight: lighter;
   margin: 0;
 }
+@media screen and (min-width: 768px) {
+  .card {
+    width: 45%;
+    /* si plus de 4 restaurants on fixera une 
+    max-width en px*/
+  }
+}
 
 #icon-heart {
   font-size: 25px;
+}
+
+.spe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #99e2d0;
+  color: #278870;
+  font-size: 14px;
+  margin: 1em;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+  font-weight: bold;
 }
 
 /*Les puces chiffre dans cercle*/
@@ -158,9 +213,8 @@ p {
 
 .item {
   background-color: #f6f6f6;
-  min-width: 220px;
-  max-width: 300px;
-  padding: 1rem;
+  max-width: 280px;
+  padding: 1.5rem;
   margin: 1.5rem auto;
   border-radius: 20px;
   display: flex;
@@ -177,23 +231,35 @@ p {
 }
 .item i {
   font-size: 1.3rem;
-  padding: 1rem;
+  margin: 0 1rem;
   color: grey;
 }
 .item i:hover {
   color: #9356dc;
 }
+@media screen and (min-width: 768px) {
+  .item {
+    margin: 1.5rem 0.4rem;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .items {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 }
 
+.item:hover {
+  background: #efe6fa;
+}
+
 .header {
-  height: 60px;
+  height: auto;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,18 +267,19 @@ p {
 .header--page {
   justify-content: space-between;
 }
-.header i {
+.header--page i {
   font-size: 20px;
   margin-left: 20px;
 }
-
-.vide i {
-  color: white;
+.header--page .vide i {
+  color: transparent;
 }
 
 .footer {
   background: #353535;
   color: white;
+  padding: 2rem 1.5rem;
+  height: auto;
 }
 .footer__ul {
   list-style: none;
@@ -222,8 +289,8 @@ p {
   padding: 0.2rem;
 }
 .footer li i {
-  width: 6px;
-  height: 6px;
+  width: 15px;
+  font-size: 15px;
   padding-right: 25px;
 }
 .footer__heading {
@@ -241,7 +308,8 @@ p {
 .input__loc {
   border: 0;
   background: #eaeaea;
-  margin-left: 0.8rem;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .intro {
@@ -249,10 +317,7 @@ p {
   text-align: center;
 }
 .intro h1 {
-  padding: 1rem 3rem 1rem 3rem;
-}
-.intro p {
-  padding: 0 1.2rem 0 1.2rem;
+  padding: 1rem 3rem;
 }
 .intro div {
   padding: 2rem;
@@ -261,15 +326,16 @@ p {
 .list {
   background: #f6f6f6;
 }
+.list h1 {
+  margin-bottom: 1rem;
+}
 .list-card {
   display: flex;
   flex-direction: column;
-  margin: auto;
 }
 @media screen and (min-width: 768px) {
   .list-card {
     flex-direction: row;
-    justify-content: space-evenly;
     flex-wrap: wrap;
   }
 }
@@ -320,6 +386,12 @@ si contient card on veut un fond …
   text-transform: uppercase;
   font-weight: 300;
   padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+@media screen and (min-width: 768px) {
+  .menu__subtitle {
+    font-size: 1.4rem;
+  }
 }
 .menu hr {
   background-color: #99e2d0;
@@ -330,10 +402,22 @@ si contient card on veut un fond …
 .menu-part {
   margin-bottom: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .menu-part {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-contain {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 .menu-submit {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

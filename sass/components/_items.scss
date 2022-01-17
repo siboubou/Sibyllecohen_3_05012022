@@ -14,9 +14,8 @@
 
 .item {
     background-color: $color-bg-light;
-    min-width: 220px;
-    max-width: 300px;
-    padding: 1rem;
+    max-width: 280px;
+    padding: 1.5rem;
     margin: 1.5rem auto;
     border-radius: 20px;
     display: flex;
@@ -32,15 +31,25 @@
     }
     i {
       font-size: 1.3rem;
-      padding: 1rem;
+      margin: 0 1rem;
       color: grey;
       &:hover{
         color: $color-primary;
       }
     }
-  }
-  .items{
     @media screen and (min-width:768px){
-      display: flex;
-    }
+    margin: 1.5rem 0.4rem;
   }
+}
+.items{
+  @media screen and (min-width:768px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
+.item:hover{
+  background: lighten($color: $color-primary, $amount: 34);
+}
