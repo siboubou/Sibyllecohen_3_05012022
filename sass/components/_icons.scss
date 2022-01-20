@@ -1,0 +1,72 @@
+.icon-heart {
+    font-size: 25px;
+    .far {
+      position: absolute;
+      opacity: 1;
+      transition: opacity 100ms ease-in-out;
+
+    }
+    .fa { 
+      display: block;
+      background: -webkit-linear-gradient(
+        bottom,
+        $color-secondary 30%,
+        $color-primary 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform:scaleY(0);
+      transform-origin: bottom;
+      
+    }
+    &:hover{
+      & > .far{
+        opacity: 0;
+      }
+      & > .fa{
+          animation: heartfa 500ms 100ms  forwards;
+      }
+  }
+  }
+  @keyframes heartfa{
+    5%{
+        transform:scaleY(0.1);
+    }
+    12%{
+        transform:scaleY(0.2);
+    }
+    37%{
+        transform:scaleY(0.3);
+    }
+    53%{
+        transform:scaleY(0.5);
+    }
+    60%{
+        transform:scaleY(0.7);
+    }
+    65%{
+        transform:scaleY(1);
+    }
+    70%{
+        transform:translateY(3%);
+    }
+    90%{
+        transform:translateY(-3%);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+  
+  
+
+  .icon-heart-test{
+      .fa-heart::after{
+         content: ""; 
+         display: block;
+         background: url(fa-heart);
+         color: red;
+      }
+  }

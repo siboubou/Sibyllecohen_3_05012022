@@ -1,13 +1,16 @@
 .input {
-  background: $color-bg-medium;
+  background: $color-bg-input;
   height: 50px;
+  
   @include display-center;
   box-shadow: inset 0px 4px 9px -6px rgba($color-shaddow, 1);
   
   &__loc {
     border: 0;
-    background: $color-bg-medium;
+    background: $color-bg-input;
     font-size: 1.1rem;
     text-align: center;  
+    outline: none;
   }
+  
 }

@@ -11,11 +11,11 @@ html{
 section {
   padding: 2rem 1.5rem;
   height: auto;
-  @media screen and (min-width:768px)
+  @include tablette-bp
   {
     padding: 2rem 2rem;
   }
-  @media screen and (min-width:1024px)
+  @include desktop-bp
   {
     padding: 2rem 2.5rem;
   }

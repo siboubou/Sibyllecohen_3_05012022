@@ -1,10 +1,11 @@
-@import "./base/base";
-@import "./base/typography";
 @import "./utils/variables";
 @import "./utils/mixins";
+@import "./base/base";
+@import "./base/typography";
 @import "./components/buttons";
 @import "./components/cards";
 @import "./components/items";
+@import "./components/icons";
 @import "./layouts/header";
 @import "./layouts/footer";
 @import "./pages/input";

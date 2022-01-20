@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    z-index: 1;
     @include shadow;
   
     &__puce {
@@ -34,19 +35,27 @@
       margin: 0 1rem;
       color: grey;
     }
+    ::after{
+      content:"";
+      @include pseudo-pos;
+      border-radius: 20px;
+      background: lighten($color-primary, 34);
+      opacity: 0;
+    }
     &:hover{
-      background: lighten($color: $color-primary, $amount: 34);
+     ::after{
+        opacity: 1;
+      }  
       #icon-item{
         color: $color-primary;
       }
     }
-
-    @media screen and (min-width:768px){
+    @include tablette-bp{
     margin: 1.5rem 0.4rem;
   }
 }
 .items{
-  @media screen and (min-width:768px){
+  @include tablette-bp{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

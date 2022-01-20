@@ -1,17 +1,86 @@
+@charset "UTF-8";
+/*Position des pseudo-éléments*/
+/*Media queries*/
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 *,
-*::after,
-*::before {
+*:after,
+*:before {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
+section {
+  padding: 2rem 1.5rem;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 2rem 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    padding: 2rem 2.5rem;
+  }
+}
+
 body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
-  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.heading {
+  font-family: "Shrikhand", cursive, sans-serif;
+}
+
+h1 {
+  font-size: 1.7em;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2.4em;
+  }
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+h3 {
+  font-size: 1em;
+}
+
+p {
+  font-weight: 300;
 }
 
 a {
@@ -19,42 +88,395 @@ a {
   color: unset;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
+/*Les boutons type submit*/
+.btn {
+  padding: 1rem 1rem;
+  color: white;
+  background: linear-gradient(-10deg, #9356dc, #ff79da);
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+          box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
-.heading {
-  font-family: 'Shrikhand', cursive;
-  font-size: 2rem;
+.btn--submit {
+  padding: 1rem 3.5rem;
 }
 
-h1 {
-  font-size: 1.6rem;
+.btn::after {
+  content: "";
+  -webkit-box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
+          box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
 }
 
-p {
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+/*Les boutons de type select*/
+.select-btn {
+  background-color: white;
+  width: 100%;
+  height: 70px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+          box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.select-btn__contain {
+  width: 85%;
+}
+
+.select-btn__title {
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .select-btn__title {
+    font-size: 1rem;
+  }
+}
+
+.select-btn p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.select-btn__text {
+  text-overflow: ellipsis;
+}
+
+.select-btn__price {
+  font-weight: bold;
 }
 
 .card {
-  font-size: 1.1rem;
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  margin: 0.5rem auto;
+  position: relative;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+          box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
 }
 
-.btn {
+.card__img {
+  width: 100%;
+  height: 70%;
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card__contain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 1rem;
+}
+
+.card__txt {
+  margin: 0;
+}
+
+.card__title {
+  padding-bottom: 0.2rem;
+}
+
+.card__logo {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 45%;
+    /* si plus de 4 restaurants on fixera une 
+        max-width en px*/
+  }
+}
+
+/*btn d'indication spécifique comme "nouveau"*/
+.spe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #99e2d0;
+  color: #278870;
+  font-size: 14px;
+  margin: 1em;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+/*Les puces chiffre dans cercle*/
+.puce, .item__puce {
+  background: #9356dc;
   color: white;
-  background: linear-gradient(-10deg, #9356DC, #FF79DA);
-  border-radius: 35px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item {
+  background-color: #f6f6f6;
+  max-width: 280px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+          box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+}
+
+.item__puce {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: -10px;
+}
+
+.item i {
+  font-size: 1.3rem;
+  margin: 0 1rem;
+  color: grey;
+}
+
+.item ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: #efe6fa;
+  opacity: 0;
+}
+
+.item:hover ::after {
+  opacity: 1;
+}
+
+.item:hover #icon-item {
+  color: #9356dc;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    margin: 1.5rem 0.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.icon-heart {
+  font-size: 25px;
+}
+
+.icon-heart .far {
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: opacity 100ms ease-in-out;
+  transition: opacity 100ms ease-in-out;
+}
+
+.icon-heart .fa {
+  display: block;
+  background: -webkit-linear-gradient(bottom, #ff79da 30%, #9356dc 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.icon-heart:hover > .far {
+  opacity: 0;
+}
+
+.icon-heart:hover > .fa {
+  -webkit-animation: heartfa 500ms 100ms  forwards;
+          animation: heartfa 500ms 100ms  forwards;
+}
+
+@-webkit-keyframes heartfa {
+  5% {
+    -webkit-transform: scaleY(0.1);
+            transform: scaleY(0.1);
+  }
+  12% {
+    -webkit-transform: scaleY(0.2);
+            transform: scaleY(0.2);
+  }
+  37% {
+    -webkit-transform: scaleY(0.3);
+            transform: scaleY(0.3);
+  }
+  53% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  60% {
+    -webkit-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+  }
+  65% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  70% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%);
+  }
+  90% {
+    -webkit-transform: translateY(-3%);
+            transform: translateY(-3%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes heartfa {
+  5% {
+    -webkit-transform: scaleY(0.1);
+            transform: scaleY(0.1);
+  }
+  12% {
+    -webkit-transform: scaleY(0.2);
+            transform: scaleY(0.2);
+  }
+  37% {
+    -webkit-transform: scaleY(0.3);
+            transform: scaleY(0.3);
+  }
+  53% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  60% {
+    -webkit-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+  }
+  65% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  70% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%);
+  }
+  90% {
+    -webkit-transform: translateY(-3%);
+            transform: translateY(-3%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.icon-heart-test .fa-heart::after {
+  content: "";
+  display: block;
+  background: url(fa-heart);
+  color: red;
 }
 
 .header {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 60px;
+  height: auto;
   width: 100%;
+  margin-top: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,11 +488,64 @@ p {
           align-items: center;
 }
 
+.header--page {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header--page i {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.footer {
+  background: #353535;
+  color: white;
+  padding: 2rem 1.5rem;
+  height: auto;
+}
+
+.footer__ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.footer li {
+  padding: 0.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer li {
+    display: inline-block;
+    padding: 0.2rem 1rem 0.2rem 0;
+  }
+}
+
+.footer li i {
+  width: 15px;
+  font-size: 15px;
+  padding-right: 25px;
+}
+
+.footer__heading {
+  font-size: 1.2rem;
+}
+
 .input {
-  background: #EAEAEA;
+  background: #eaeaea;
   height: 50px;
-  width: 100%;
-  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,27 +555,157 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: inset 0px 4px 9px -6px #4e4e4e;
-          box-shadow: inset 0px 4px 9px -6px #4e4e4e;
+  -webkit-box-shadow: inset 0px 4px 9px -6px #9c9c9c;
+          box-shadow: inset 0px 4px 9px -6px #9c9c9c;
 }
 
 .input__loc {
   border: 0;
-  background: #EAEAEA;
-  margin-left: 0.8rem;
+  background: #eaeaea;
+  font-size: 1.1rem;
+  text-align: center;
+  outline: none;
 }
 
 .intro {
-  background: #F6F6F6;
+  background: #f6f6f6;
   text-align: center;
-  padding: 1.5rem;
 }
 
 .intro h1 {
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 3rem;
 }
 
 .intro div {
   padding: 2rem;
+}
+
+.list {
+  background: #f6f6f6;
+}
+
+.list h1 {
+  margin-bottom: 1rem;
+}
+
+.list-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .list-card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/*
+Je veux que Fontionnement et Restaurant fonctionnent de la même façon sous le nom de list
+mais qu'ils aient des background différents
+.list si contient item on veut un fond blanc
+si contient card on veut un fond …
+*/
+.heading-section {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.heading-section__bg {
+  width: 100%;
+  height: 100%;
+}
+
+.heading-section__bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.heading-section__contain {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 15%;
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 40px 40px 0 0;
+  padding: 3rem 1rem 1rem 1rem;
+}
+
+.heading-section__contain i {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu__subtitle {
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+.menu hr {
+  background-color: #99e2d0;
+  width: 40px;
+  height: 3px;
+  border: none;
+}
+
+.menu-part {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-part {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-contain {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.menu-submit {
+  text-align: center;
+  padding: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

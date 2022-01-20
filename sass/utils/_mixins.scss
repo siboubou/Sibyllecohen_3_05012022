@@ -3,16 +3,27 @@
   justify-content: center;
   align-items: center;
 }
-@mixin shadow {
-  box-shadow: 0px 5px 10px 2px rgb($color-shaddow, 0.3);
+@mixin shadow ($offset-y: 5px, $alpha: 0.3){
+  box-shadow: 0px $offset-y 10px 2px rgba($color-shaddow, $alpha);
 }
 
-@mixin desktop-only {
+/*Position des pseudo-éléments*/
+@mixin pseudo-pos{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  z-index: -1; 
+}
+
+/*Media queries*/
+@mixin desktop-bp {
   @media screen and (min-width:1024px){
     @content;
   }
 }
-@mixin tablette-only {
+@mixin tablette-bp {
   @media screen and (min-width:768px){
     @content;
   }

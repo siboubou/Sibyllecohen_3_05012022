@@ -39,7 +39,7 @@
         font-weight: 300;
         padding-bottom: 0.5rem;
         font-size: 1.1rem;
-        @media screen and (min-width:768px){
+        @include tablette-bp{
           font-size: 1.4rem;
         }
 
@@ -54,13 +54,13 @@
     &-part
     {
       margin-bottom: 2rem;
-      @media screen and (min-width:768px){
+      @include tablette-bp{
         width: 32%;
        }
     }
 }
 .menu-contain{
-  @media screen and (min-width:768px){
+  @include tablette-bp{
     display: flex;
     justify-content: space-between;
    }
