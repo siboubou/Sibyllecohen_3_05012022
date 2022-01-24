@@ -30,47 +30,5 @@
 
 
 /*Les boutons de type select*/
-.select-btn{
-  background-color: white;
-  width: 100%;
-  height: 70px;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 15px;
-  @include shadow;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  
 
-  &__contain{
-    width: 85%;
-  }
-  &__title{
-    font-size: 1.1rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    @include tablette-bp{
-      font-size: 1rem;
-     }
-  } 
-  p{
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-top: 0.3rem;
-    font-size: 0.9rem;
-    
-  }
-  &__text{
-    text-overflow: ellipsis;
-    
-    
-  }
-  &__price{
-    font-weight: bold;
-  }
-}
 
