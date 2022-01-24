@@ -121,6 +121,8 @@ $anim-delay: $anim-dur/ $num-plats;
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 15px;
+  position: relative;
+
   @include shadow;
   display: flex;
   justify-content: space-between;
@@ -135,7 +137,7 @@ $anim-delay: $anim-dur/ $num-plats;
 
 
   &__contain{
-    width: 85%;
+    width: 70%;
   }
   &__title{
     font-size: 1.1rem;
@@ -160,6 +162,30 @@ $anim-delay: $anim-dur/ $num-plats;
   }
   &__price{
     font-weight: bold;
+  }
+  .check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    color: white;
+    background: $color-tertiary;
+    font-size: 20px;
+    border-radius: 0 15px 15px 0;
+    width: 8%;
+    height: 100%;
+    padding: 1rem;
+    position: relative;
+    right: -1rem;
+    bottom: -1rem;
+    display: none;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 3s;
+  }
+  &:active .check{
+    display:flex;
+    transform: scaleX(1);
   }
 }
 

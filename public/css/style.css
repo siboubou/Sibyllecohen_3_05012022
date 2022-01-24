@@ -113,7 +113,6 @@ a {
   opacity: 1;
 }
 
-/*Les boutons de type select*/
 .card {
   width: 100%;
   height: 250px;
@@ -264,7 +263,7 @@ a {
 }
 .icon-heart:hover > .fa {
   transform: scale(1);
-  animation: heartpulse 200ms 300ms ease-in-out 2;
+  animation: heartpulse 150ms 250ms ease-in-out 2;
 }
 
 @keyframes heartpulse {
@@ -503,6 +502,7 @@ si contient card on veut un fond …
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 15px;
+  position: relative;
   box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
   display: flex;
   justify-content: space-between;
@@ -541,7 +541,7 @@ si contient card on veut un fond …
   animation-delay: 1000ms;
 }
 .menu-item__contain {
-  width: 85%;
+  width: 70%;
 }
 .menu-item__title {
   font-size: 1.1rem;
@@ -567,6 +567,30 @@ si contient card on veut un fond …
 }
 .menu-item__price {
   font-weight: bold;
+}
+.menu-item .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  color: white;
+  background: #99e2d0;
+  font-size: 20px;
+  border-radius: 0 15px 15px 0;
+  width: 8%;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  right: -1rem;
+  bottom: -1rem;
+  display: none;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 3s;
+}
+.menu-item:active .check {
+  display: flex;
+  transform: scaleX(1);
 }
 
 @media screen and (min-width: 768px) {
