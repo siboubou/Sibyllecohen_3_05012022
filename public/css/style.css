@@ -277,6 +277,91 @@ a {
     transform: scale(1);
   }
 }
+@keyframes anim-gradient {
+  0% {
+    background-position: 0% 50%;
+    animation-timing-function: cubic-bezier(0.76, 0, 0.45, 1);
+  }
+  100% {
+    background-position: 50% 100%;
+    animation-timing-function: cubic-bezier(0.26, 0, 0.15, 0.84);
+  }
+}
+@keyframes anim-myfood {
+  0% {
+    opacity: 0.4;
+  }
+  5%, 100% {
+    opacity: 1;
+  }
+}
+@keyframes anim-oh {
+  5% {
+    transform: scale(5.5) translateX(30%);
+    animation-timing-function: cubic-bezier(0, 0.99, 1, 0.99);
+  }
+  16% {
+    transform: scale(1) translateX(0);
+  }
+}
+@keyframes anim-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes anim-opacity {
+  5%, 100% {
+    opacity: 1;
+  }
+}
+.load__logo {
+  display: flex;
+  font-size: 42px;
+}
+.load__logo--oh {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #ff79da 18%);
+  background-size: 500% 500%;
+  opacity: 0;
+  animation: anim-gradient 2s infinite alternate, anim-oh 3000ms, anim-opacity 3000ms ease-out;
+}
+.load__logo--myfood {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #ff79da 18%);
+  background-size: 500% 500%;
+  padding-right: 1rem;
+  opacity: 0;
+  animation: anim-gradient 1500ms 300ms infinite alternate, anim-myfood 2400ms 600ms ease-in-out;
+}
+
+.load__ring {
+  margin: auto;
+  border: 3px solid #ff79da;
+  border-top: 3px solid #9356dc;
+  border-radius: 50%;
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  opacity: 0;
+  animation: anim-ring 1200ms 800ms ease-in infinite, anim-opacity 2200ms 800ms ease-out;
+}
+
+.load {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   height: auto;
   width: 100%;
@@ -541,7 +626,7 @@ si contient card on veut un fond …
   animation-delay: 1000ms;
 }
 .menu-item__contain {
-  width: 70%;
+  width: 63%;
 }
 .menu-item__title {
   font-size: 1.1rem;
@@ -567,32 +652,52 @@ si contient card on veut un fond …
 }
 .menu-item__price {
   font-weight: bold;
+  transform: translateX(0);
+  transition: transform 500ms;
 }
 .menu-item .check {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: content-box;
   color: white;
   background: #99e2d0;
   font-size: 20px;
   border-radius: 0 15px 15px 0;
-  width: 8%;
-  height: 100%;
-  padding: 1rem;
-  position: relative;
-  right: -1rem;
-  bottom: -1rem;
-  display: none;
-  transform: scaleX(0);
+  width: 50px;
+  height: 70px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
   transform-origin: right;
-  transition: transform 3s;
 }
-.menu-item:active .check {
-  display: flex;
-  transform: scaleX(1);
+.menu-item .check i {
+  transform: rotate(-460deg);
+  transition: transform 600ms cubic-bezier(0.31, 0.17, 0.48, 1);
+}
+.menu-item:hover .check {
+  animation: animcheck 500ms both;
+  opacity: 1;
+  z-index: 2;
+}
+.menu-item:hover .check > i {
+  transform: rotate(0);
+}
+.menu-item:hover .menu-item__price {
+  transform: translateX(-45px);
 }
 
+@keyframes animcheck {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   .menu-contain {
     display: flex;
@@ -603,6 +708,20 @@ si contient card on veut un fond …
 .menu-submit {
   text-align: center;
   padding: 1rem;
+}
+
+.main--accueil {
+  animation: opacity-main 0ms both;
+  animation-delay: 3000ms;
+}
+
+@keyframes opacity-main {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

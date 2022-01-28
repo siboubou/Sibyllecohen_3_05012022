@@ -1,0 +1,113 @@
+$load-dur:3000ms;
+$load-dur-total: 3000ms;
+
+@keyframes anim-gradient{
+    0%{
+        background-position: 0% 50%;
+        animation-timing-function: cubic-bezier(.76,0,.45,1);
+    }
+    100%{
+        background-position: 50% 100%;
+        animation-timing-function: cubic-bezier(0.26, 0,.15,.84);
+    }
+}
+@keyframes anim-myfood{
+    0%{
+        opacity:0.4;
+    }
+    5%, 100%{
+        opacity: 1;
+    }
+}
+@keyframes anim-oh{
+5%{
+    transform: scale(5.5) translateX(30%);
+    animation-timing-function: cubic-bezier(0,.99,1,.99);
+}
+16%{
+    transform: scale(1) translateX(0); 
+}
+}
+@keyframes anim-ring {
+    0% { 
+        transform: rotate(0deg); 
+    }
+   
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+@keyframes anim-opacity{
+   
+    5%, 100%{
+        opacity: 1;
+    }
+}
+.load__logo{
+    display: flex;
+    font-size: 42px;
+    
+
+    &--oh{
+        color:transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: repeating-linear-gradient(
+            120deg, 
+            $color-secondary 5%, 
+            $color-primary 12%,
+            $color-secondary 18%
+            );
+        background-size: 500% 500%; 
+        opacity: 0;
+        animation: 
+            anim-gradient 2s infinite alternate,
+            anim-oh $load-dur,
+            anim-opacity $load-dur-total ease-out;
+
+    }
+    &--myfood{
+        color:transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: repeating-linear-gradient(
+            120deg, 
+            $color-secondary 5%, 
+            $color-primary 12%,
+            $color-secondary 18%
+            );
+        background-size: 500% 500%; 
+        padding-right: 1rem;
+        opacity: 0;
+        animation: 
+            anim-gradient 1500ms 300ms infinite alternate,
+            anim-myfood calc($load-dur-total - 600ms) 600ms ease-in-out;
+            
+    }
+}
+
+.load__ring {
+    margin: auto;
+    border: 3px solid $color-secondary;
+    border-top: 3px solid $color-primary;
+    border-radius: 50%;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    opacity: 0;
+    animation: 
+        anim-ring 1200ms 800ms ease-in infinite,
+        anim-opacity calc($load-dur-total - 800ms) 800ms ease-out;  
+} 
+
+
+
+
+.load{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

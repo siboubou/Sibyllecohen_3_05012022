@@ -1,0 +1,13 @@
+.main--accueil{  
+    animation: opacity-main 0ms both;
+    animation-delay: $load-dur-total;
+    
+}
+@keyframes opacity-main{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
