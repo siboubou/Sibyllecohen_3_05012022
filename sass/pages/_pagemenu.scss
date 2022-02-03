@@ -28,9 +28,10 @@
     }
   }   
 }
+
 $num-plats:10;
 $anim-dur:1000ms;
-$animsubtitle-dur:400ms;
+$animsubtitle-dur:300ms;
 $anim-delay: $anim-dur/ $num-plats;
 
 @keyframes animplats{
@@ -55,8 +56,8 @@ $anim-delay: $anim-dur/ $num-plats;
   0%{
     transform: scaleX(0);
   }
-
 }
+
 .menu{
   background-color: $color-bg-light;
   width: 100%;
@@ -69,8 +70,9 @@ $anim-delay: $anim-dur/ $num-plats;
     animation: animsubtitle $animsubtitle-dur both;
     @include tablette-bp{
       font-size: 1.4rem;
-      animation: animsubtitle-tablette 400ms both;
+      animation: animsubtitle-tablette $animsubtitle-dur both;
     }
+
     &--1{
       animation-delay: 460ms;
     }
@@ -87,22 +89,13 @@ $anim-delay: $anim-dur/ $num-plats;
     transform-origin: left;
     animation: animhr 115ms both;
     &--0{
-      animation-delay: 285ms;
-      @include tablette-bp{
-        animation-delay: 90ms;
-      }
+      animation-delay: 90ms;
     }
     &--1{
-      animation-delay: 745ms;
-      @include tablette-bp{
-        animation-delay: 550ms;
-      }
+      animation-delay: 550ms;
     }
     &--2{
-      animation-delay: 1045ms ;
-      @include tablette-bp{
-        animation-delay: 850ms;
-      }
+      animation-delay: 850ms;
     } 
   }
   &-part{
@@ -117,23 +110,30 @@ $anim-delay: $anim-dur/ $num-plats;
   background-color: white;
   width: 100%;
   height: 70px;
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
   margin: 1rem 0;
   border-radius: 15px;
-  position: relative;
+  display:flex;
+  align-items: center;
   @include shadow;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+
   transform-origin: top;
   animation: animplats $anim-dur ease-in-out both; 
   @for $i from 1 through $num-plats{
     &--#{$i}{
       animation-delay: $anim-delay * $i;
     }
-  }  
+  } 
+
   &__contain{
-    width: 63%;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__details{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    overflow: hidden;
   }
   &__title{
     font-size: 1.1rem;
@@ -145,23 +145,17 @@ $anim-delay: $anim-dur/ $num-plats;
       font-size: 1rem;
      }
   } 
-  p{
-    width: 100%;
+  &__text{
     white-space: nowrap;
     overflow: hidden;
     margin-top: 0.3rem;
     font-size: 0.9rem;
-    
-  }
-  &__text{
     text-overflow: ellipsis;
   }
   &__price{
     font-weight: bold;
-    transform: translateX(0);
-    transition: transform 500ms;
-    
   }
+
   .check{
     display: flex;
     justify-content: center;
@@ -170,43 +164,27 @@ $anim-delay: $anim-dur/ $num-plats;
     background: $color-tertiary;
     font-size: 20px;
     border-radius: 0 15px 15px 0;
-    width: 50px;
+    margin-left: 1rem; 
     height: 70px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
     opacity: 0;
+    width: 0%;
     transform-origin: right;
+    transition: width 100ms ease-in, opacity 10ms;
     i{
       transform: rotate(-460deg);
       transition: transform 600ms cubic-bezier(.31,.17,.48,1) ;
     }
   }
-  &:hover .check{
-    animation: animcheck 500ms both;
+
+  &:hover .check{ 
     opacity: 1;
-    z-index: 2;
+    width: 20%;
     > i{
       transform: rotate(0);
     }
   }
-  &:hover .menu-item__price{
-    transform: translateX(-45px);
-  }
-
 }
 
-@keyframes animcheck{
-  0%{
-    transform: scaleX(0);
-    opacity: 1;
-  }
-  100%{
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
 
 
 .menu-contain{

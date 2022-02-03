@@ -1,64 +1,58 @@
 /*Les puces chiffre dans cercle*/
-.puce
-{
+.puce{
   background: $color-primary;
-    color: $color-white;
-    font-weight: 300;
-    font-size: 0.9rem;
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-    border-radius: 50%;
-    @include display-center;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 0.9rem;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  @include display-center;
 }
 
 .item {
-    background-color: $color-bg-light;
-    max-width: 280px;
-    padding: 1.5rem;
-    margin: 1.5rem auto;
+  background-color: $color-bg-light;
+  max-width: 280px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  @include shadow;
+
+  &__puce {
+    @extend .puce;
+    @include display-center;
+    position: absolute;
+    left: -10px;
+  }
+  i {
+    font-size: 1.3rem;
+    margin: 0 1rem;
+    color: grey;
+  }
+  ::after{
+    content:"";
+    @include pseudo-pos;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    @include shadow;
+    background: lighten($color-primary, 34);
+    opacity: 0;
+  }
   
-    &__puce {
-      @extend .puce;
-      @include display-center;
-      position: absolute;
-      left: -10px;
-    }
-    i {
-      font-size: 1.3rem;
-      margin: 0 1rem;
-      color: grey;
-    }
+  &:hover{
     ::after{
-      content:"";
-      @include pseudo-pos;
-      border-radius: 20px;
-      background: lighten($color-primary, 34);
-      opacity: 0;
+      opacity: 1;
+    }  
+    #icon-item{
+      color: $color-primary;
     }
-    &:hover{
-     ::after{
-        opacity: 1;
-      }  
-      #icon-item{
-        color: $color-primary;
-      }
-    }
-    @include tablette-bp{
-    margin: 1.5rem 0.4rem;
   }
-}
-.items{
+
   @include tablette-bp{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  margin: 1.5rem 0.4rem;
   }
 }
+

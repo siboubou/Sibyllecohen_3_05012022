@@ -12,21 +12,22 @@
       justify-content: space-between;
     }
   }
+  
   li {
     padding: 0.2rem;
-    @include tablette-bp{
-      display: inline-block;
-      padding: 0.2rem 1rem 0.2rem 0; 
-    }
     i{
       width: 15px;
       font-size: 15px;
       padding-right: 25px;
     }
-  }
-  &__heading
-  {
-    font-size: 1.2rem;
-  }
+    &__heading{
+      font-size: 1.2rem;
+    }
+
+    @include tablette-bp{
+      display: inline-block;
+      padding: 0.2rem 1rem 0.2rem 0; 
+    }
+  } 
 }
 

@@ -38,36 +38,36 @@ body {
   font-family: "Shrikhand", cursive, sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-size: 1.7em;
 }
 @media screen and (min-width: 768px) {
-  h1 {
+  h1, h2 {
     font-size: 2em;
   }
 }
 @media screen and (min-width: 1024px) {
-  h1 {
+  h1, h2 {
     font-size: 2.4em;
   }
 }
 
-h2 {
+h3 {
   font-size: 1.2em;
   font-weight: 300;
 }
 @media screen and (min-width: 768px) {
-  h2 {
+  h3 {
     font-size: 1.7em;
   }
 }
 @media screen and (min-width: 1024px) {
-  h2 {
+  h3 {
     font-size: 1.8em;
   }
 }
 
-h3 {
+h4 {
   font-size: 1em;
 }
 
@@ -88,84 +88,15 @@ a {
   border-radius: 30px;
   box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
   position: relative;
-  z-index: 1;
+  opacity: 1;
+  transition: opacity 200ms;
 }
 .btn--submit {
   padding: 1rem 3.5rem;
 }
-.btn::after {
-  content: "";
-  box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
-  border-radius: 30px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 200ms;
-}
 .btn:hover {
   opacity: 0.8;
-}
-.btn:hover::after {
-  opacity: 1;
-}
-
-.card {
-  width: 100%;
-  height: 250px;
-  border-radius: 15px;
-  margin: 0.5rem auto;
-  position: relative;
-  box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
-}
-.card__img {
-  width: 100%;
-  height: 70%;
-}
-.card__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px 15px 0 0;
-}
-.card__contain {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-.card__txt {
-  margin: 0;
-}
-.card__title {
-  padding-bottom: 0.2rem;
-}
-.card__logo {
-  margin-right: 10px;
-}
-@media screen and (min-width: 768px) {
-  .card {
-    width: 45%;
-    /* si plus de 4 restaurants on fixera une 
-    max-width en px*/
-  }
-}
-
-/*btn d'indication spécifique comme "nouveau"*/
-.spe {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #99e2d0;
-  color: #278870;
-  font-size: 14px;
-  margin: 1em;
-  padding: 0.5em 1em;
-  border-radius: 2px;
-  font-weight: bold;
+  box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
 }
 
 /*Les puces chiffre dans cercle*/
@@ -231,15 +162,7 @@ a {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-}
-
+/* Icône coeur*/
 .icon-heart {
   font-size: 25px;
 }
@@ -277,6 +200,17 @@ a {
     transform: scale(1);
   }
 }
+/*item d'indication spécifique comme "nouveau"*/
+.spe {
+  background: #99e2d0;
+  color: #278870;
+  font-size: 14px;
+  margin: 1em;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
 @keyframes anim-gradient {
   0% {
     background-position: 0% 50%;
@@ -296,12 +230,9 @@ a {
   }
 }
 @keyframes anim-oh {
-  5% {
+  50% {
     transform: scale(5.5) translateX(30%);
     animation-timing-function: cubic-bezier(0, 0.99, 1, 0.99);
-  }
-  16% {
-    transform: scale(1) translateX(0);
   }
 }
 @keyframes anim-ring {
@@ -317,49 +248,49 @@ a {
     opacity: 1;
   }
 }
-.load__logo {
+.load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
   display: flex;
-  font-size: 42px;
-}
-.load__logo--oh {
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #ff79da 18%);
-  background-size: 500% 500%;
-  opacity: 0;
-  animation: anim-gradient 2s infinite alternate, anim-oh 3000ms, anim-opacity 3000ms ease-out;
-}
-.load__logo--myfood {
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #ff79da 18%);
-  background-size: 500% 500%;
-  padding-right: 1rem;
-  opacity: 0;
-  animation: anim-gradient 1500ms 300ms infinite alternate, anim-myfood 2400ms 600ms ease-in-out;
+  justify-content: center;
+  align-items: center;
 }
 
 .load__ring {
-  margin: auto;
-  border: 3px solid #ff79da;
-  border-top: 3px solid #9356dc;
+  border: 3px solid transparent;
+  border-color: transparent #9356dc transparent #ff79da;
   border-radius: 50%;
-  position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 310px;
+  height: 310px;
   opacity: 0;
   animation: anim-ring 1200ms 800ms ease-in infinite, anim-opacity 2200ms 800ms ease-out;
 }
 
-.load {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+.load__logo {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 42px;
+  margin: 1rem;
+  position: absolute;
+}
+.load__logo__oh {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #ff79da 18%);
+  background-size: 500% 500%;
+  opacity: 0;
+  animation: anim-gradient 2s infinite alternate, anim-oh 400ms, anim-opacity 3000ms ease-out;
+}
+.load__logo__myfood {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #99e2d0 16%, #ff79da 18%);
+  background-size: 500% 500%;
+  padding-right: 1rem;
+  opacity: 0;
+  animation: anim-gradient 1500ms infinite alternate, anim-myfood 2450ms 550ms ease-in-out;
 }
 
 .header {
@@ -397,19 +328,118 @@ a {
 .footer li {
   padding: 0.2rem;
 }
+.footer li i {
+  width: 15px;
+  font-size: 15px;
+  padding-right: 25px;
+}
+.footer li__heading {
+  font-size: 1.2rem;
+}
 @media screen and (min-width: 768px) {
   .footer li {
     display: inline-block;
     padding: 0.2rem 1rem 0.2rem 0;
   }
 }
-.footer li i {
-  width: 15px;
-  font-size: 15px;
-  padding-right: 25px;
+
+.main--accueil {
+  animation: opacity-main 0ms both;
+  animation-delay: 3000ms;
 }
-.footer__heading {
-  font-size: 1.2rem;
+
+@keyframes opacity-main {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.intro {
+  background: #f6f6f6;
+  text-align: center;
+}
+.intro h1 {
+  padding: 1rem 3rem;
+}
+.intro div {
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .liste-fonctionnement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
+.liste-restaurants {
+  background: #f6f6f6;
+}
+.liste-restaurants h1 {
+  margin-bottom: 1rem;
+}
+.liste-restaurants .liste-cards {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .liste-restaurants .liste-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  margin: 0.5rem auto;
+  position: relative;
+  box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+}
+.card__img {
+  width: 100%;
+  height: 70%;
+}
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.card__contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.card__txt {
+  margin: 0;
+}
+.card__title {
+  padding-bottom: 0.2rem;
+}
+.card__logo {
+  margin-right: 10px;
+}
+.card .spe {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.card:hover {
+  box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 45%;
+    /* si plus de 4 restaurants on fixera une 
+    max-width en px*/
+  }
 }
 
 .input {
@@ -428,40 +458,6 @@ a {
   outline: none;
 }
 
-.intro {
-  background: #f6f6f6;
-  text-align: center;
-}
-.intro h1 {
-  padding: 1rem 3rem;
-}
-.intro div {
-  padding: 2rem;
-}
-
-.list {
-  background: #f6f6f6;
-}
-.list h1 {
-  margin-bottom: 1rem;
-}
-.list-card {
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 768px) {
-  .list-card {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-/*
-Je veux que Fontionnement et Restaurant fonctionnent de la même façon sous le nom de list
-mais qu'ils aient des background différents
-.list si contient item on veut un fond blanc
-si contient card on veut un fond …
-*/
 .heading-section {
   width: 100%;
   height: 300px;
@@ -525,12 +521,12 @@ si contient card on veut un fond …
   font-weight: 300;
   padding-bottom: 0.5rem;
   font-size: 1.1rem;
-  animation: animsubtitle 400ms both;
+  animation: animsubtitle 300ms both;
 }
 @media screen and (min-width: 768px) {
   .menu__subtitle {
     font-size: 1.4rem;
-    animation: animsubtitle-tablette 400ms both;
+    animation: animsubtitle-tablette 300ms both;
   }
 }
 .menu__subtitle--1 {
@@ -548,28 +544,13 @@ si contient card on veut un fond …
   animation: animhr 115ms both;
 }
 .menu .hr--0 {
-  animation-delay: 285ms;
-}
-@media screen and (min-width: 768px) {
-  .menu .hr--0 {
-    animation-delay: 90ms;
-  }
+  animation-delay: 90ms;
 }
 .menu .hr--1 {
-  animation-delay: 745ms;
-}
-@media screen and (min-width: 768px) {
-  .menu .hr--1 {
-    animation-delay: 550ms;
-  }
+  animation-delay: 550ms;
 }
 .menu .hr--2 {
-  animation-delay: 1045ms;
-}
-@media screen and (min-width: 768px) {
-  .menu .hr--2 {
-    animation-delay: 850ms;
-  }
+  animation-delay: 850ms;
 }
 .menu-part {
   margin-bottom: 2rem;
@@ -584,14 +565,12 @@ si contient card on veut un fond …
   background-color: white;
   width: 100%;
   height: 70px;
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
   margin: 1rem 0;
   border-radius: 15px;
-  position: relative;
-  box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
   transform-origin: top;
   animation: animplats 1000ms ease-in-out both;
 }
@@ -626,7 +605,14 @@ si contient card on veut un fond …
   animation-delay: 1000ms;
 }
 .menu-item__contain {
-  width: 63%;
+  width: 100%;
+  overflow: hidden;
+}
+.menu-item__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow: hidden;
 }
 .menu-item__title {
   font-size: 1.1rem;
@@ -640,20 +626,15 @@ si contient card on veut un fond …
     font-size: 1rem;
   }
 }
-.menu-item p {
-  width: 100%;
+.menu-item__text {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0.3rem;
   font-size: 0.9rem;
-}
-.menu-item__text {
   text-overflow: ellipsis;
 }
 .menu-item__price {
   font-weight: bold;
-  transform: translateX(0);
-  transition: transform 500ms;
 }
 .menu-item .check {
   display: flex;
@@ -663,41 +644,25 @@ si contient card on veut un fond …
   background: #99e2d0;
   font-size: 20px;
   border-radius: 0 15px 15px 0;
-  width: 50px;
+  margin-left: 1rem;
   height: 70px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
   opacity: 0;
+  width: 0%;
   transform-origin: right;
+  transition: width 100ms ease-in, opacity 10ms;
 }
 .menu-item .check i {
   transform: rotate(-460deg);
   transition: transform 600ms cubic-bezier(0.31, 0.17, 0.48, 1);
 }
 .menu-item:hover .check {
-  animation: animcheck 500ms both;
   opacity: 1;
-  z-index: 2;
+  width: 20%;
 }
 .menu-item:hover .check > i {
   transform: rotate(0);
 }
-.menu-item:hover .menu-item__price {
-  transform: translateX(-45px);
-}
 
-@keyframes animcheck {
-  0% {
-    transform: scaleX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
 @media screen and (min-width: 768px) {
   .menu-contain {
     display: flex;
@@ -708,20 +673,6 @@ si contient card on veut un fond …
 .menu-submit {
   text-align: center;
   padding: 1rem;
-}
-
-.main--accueil {
-  animation: opacity-main 0ms both;
-  animation-delay: 3000ms;
-}
-
-@keyframes opacity-main {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

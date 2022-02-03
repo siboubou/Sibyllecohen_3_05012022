@@ -1,7 +1,7 @@
 .main--accueil{  
     animation: opacity-main 0ms both;
-    animation-delay: $load-dur-total;
-    
+    animation-delay: $load-dur;
+
 }
 @keyframes opacity-main{
     0%{
@@ -9,5 +9,40 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+.intro {
+    background: $color-bg-light;
+    text-align: center;
+    h1 {
+      padding: 1rem 3rem;
+    }
+    div {
+      padding: 2rem;
+    }
+}
+
+.liste-fonctionnement{
+    @include tablette-bp{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }
+
+.liste-restaurants {
+    background: $color-bg-light;
+    h1{
+        margin-bottom: 1rem;
+    }
+    .liste-cards {
+        display: flex;
+        flex-direction: column;
+        @include tablette-bp {
+        flex-direction: row;
+        flex-wrap: wrap;
+        }  
     }
 }

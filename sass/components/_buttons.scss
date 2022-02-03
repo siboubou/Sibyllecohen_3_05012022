@@ -6,26 +6,19 @@
   border-radius: 30px;
   @include shadow;
   position: relative;
-  z-index: 1;
+  opacity: 1;
+  transition: opacity 200ms;
 
   &--submit{
     padding: 1rem 3.5rem;
   }
-  &::after{
-    content:"";
-    @include shadow (7px, 0.6);
-    border-radius: 30px;
-    @include pseudo-pos;
-    opacity: 0;
-    transition: opacity 200ms;
-  }
+  
   &:hover {
     opacity:0.8;
-    &::after{
-      opacity: 1;
-    }
+    @include shadow (7px, 0.6);
   }
 }  
+
 
 
 

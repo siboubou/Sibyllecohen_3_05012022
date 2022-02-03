@@ -3,14 +3,14 @@
 @import "./base/base";
 @import "./base/typography";
 @import "./components/buttons";
-@import "./components/cards";
 @import "./components/items";
 @import "./components/icons";
+@import "./components/spe";
 @import "./components/loadingspinner";
 @import "./layouts/header";
 @import "./layouts/footer";
-@import "./pages/input";
-@import "./pages/intro";
-@import "./pages/list";
-@import "./pages/pagemenu";
 @import "./pages/accueil";
+@import "./pages/cards";
+@import "./pages/input";
+@import "./pages/pagemenu";
+

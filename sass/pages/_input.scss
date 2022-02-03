@@ -1,7 +1,6 @@
 .input {
   background: $color-bg-input;
   height: 50px;
-  
   @include display-center;
   box-shadow: inset 0px 4px 9px -6px rgba($color-shaddow, 1);
   
@@ -12,5 +11,4 @@
     text-align: center;  
     outline: none;
   }
-  
 }

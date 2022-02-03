@@ -1,0 +1,10 @@
+/*item d'indication spécifique comme "nouveau"*/
+.spe {
+    background: $color-tertiary;
+    color: darken($color: $color-tertiary, $amount: 40);
+    font-size: 14px;
+    margin: 1em;
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    font-weight: bold;
+  }
