@@ -112,6 +112,73 @@ a {
           box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
 }
 
+.card {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  margin: 0.5rem auto;
+  position: relative;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+          box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
+}
+
+.card__img {
+  width: 100%;
+  height: 70%;
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card__contain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.card__txt {
+  margin: 0;
+}
+
+.card__title {
+  padding-bottom: 0.2rem;
+}
+
+.card__logo {
+  margin-right: 10px;
+}
+
+.card .spe {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
+          box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 45%;
+    /* si plus de 4 restaurants on fixera une 
+        max-width en px*/
+  }
+}
+
 /*Les puces chiffre dans cercle*/
 .puce, .item__puce {
   background: #9356dc;
@@ -188,7 +255,7 @@ a {
   opacity: 1;
 }
 
-.item:hover #icon-item {
+.item:hover i {
   color: #9356dc;
 }
 
@@ -196,6 +263,17 @@ a {
   .item {
     margin: 1.5rem 0.4rem;
   }
+}
+
+/*item d'indication spécifique comme "nouveau"*/
+.spe {
+  background: #99e2d0;
+  color: #278870;
+  font-size: 14px;
+  margin: 1em;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+  font-weight: bold;
 }
 
 /* Icône coeur*/
@@ -220,10 +298,10 @@ a {
           transform: scale(0);
   -webkit-transform-origin: center 100%;
           transform-origin: center 100%;
-  -webkit-transition: -webkit-transform 300ms linear;
-  transition: -webkit-transform 300ms linear;
-  transition: transform 300ms linear;
-  transition: transform 300ms linear, -webkit-transform 300ms linear;
+  -webkit-transition: -webkit-transform 250ms linear;
+  transition: -webkit-transform 250ms linear;
+  transition: transform 250ms linear;
+  transition: transform 250ms linear, -webkit-transform 250ms linear;
 }
 
 .icon-heart:hover > .far {
@@ -267,17 +345,6 @@ a {
   }
 }
 
-/*item d'indication spécifique comme "nouveau"*/
-.spe {
-  background: #99e2d0;
-  color: #278870;
-  font-size: 14px;
-  margin: 1em;
-  padding: 0.5em 1em;
-  border-radius: 2px;
-  font-weight: bold;
-}
-
 @-webkit-keyframes anim-gradient {
   0% {
     background-position: 0% 50%;
@@ -304,39 +371,29 @@ a {
   }
 }
 
-@-webkit-keyframes anim-myfood {
-  0% {
-    opacity: 0.4;
-  }
-  5%, 100% {
-    opacity: 1;
-  }
-}
-
-@keyframes anim-myfood {
-  0% {
-    opacity: 0.4;
-  }
-  5%, 100% {
-    opacity: 1;
-  }
-}
-
 @-webkit-keyframes anim-oh {
   50% {
-    -webkit-transform: scale(5.5) translateX(30%);
-            transform: scale(5.5) translateX(30%);
+    -webkit-transform: scale(6.5) translateX(30%);
+            transform: scale(6.5) translateX(30%);
     -webkit-animation-timing-function: cubic-bezier(0, 0.99, 1, 0.99);
             animation-timing-function: cubic-bezier(0, 0.99, 1, 0.99);
+  }
+  85% {
+    -webkit-transform: scale(6.5) translateX(30%);
+            transform: scale(6.5) translateX(30%);
   }
 }
 
 @keyframes anim-oh {
   50% {
-    -webkit-transform: scale(5.5) translateX(30%);
-            transform: scale(5.5) translateX(30%);
+    -webkit-transform: scale(6.5) translateX(30%);
+            transform: scale(6.5) translateX(30%);
     -webkit-animation-timing-function: cubic-bezier(0, 0.99, 1, 0.99);
             animation-timing-function: cubic-bezier(0, 0.99, 1, 0.99);
+  }
+  85% {
+    -webkit-transform: scale(6.5) translateX(30%);
+            transform: scale(6.5) translateX(30%);
   }
 }
 
@@ -359,6 +416,24 @@ a {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes anim-myfood {
+  0% {
+    opacity: 0.4;
+  }
+  5%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-myfood {
+  0% {
+    opacity: 0.4;
+  }
+  5%, 100% {
+    opacity: 1;
   }
 }
 
@@ -396,8 +471,8 @@ a {
   width: 310px;
   height: 310px;
   opacity: 0;
-  -webkit-animation: anim-ring 1200ms 800ms ease-in infinite, anim-opacity calc($load-dur - 800ms) 800ms ease-out;
-          animation: anim-ring 1200ms 800ms ease-in infinite, anim-opacity calc($load-dur - 800ms) 800ms ease-out;
+  -webkit-animation: anim-ring 1000ms 800ms ease-in infinite, anim-opacity calc($load-dur - 800ms) 800ms ease-out;
+          animation: anim-ring 1000ms 800ms ease-in infinite, anim-opacity calc($load-dur - 800ms) 800ms ease-out;
 }
 
 .load__logo {
@@ -416,8 +491,8 @@ a {
   background-image: repeating-linear-gradient(120deg, #ff79da 5%, #9356dc 12%, #ff79da 18%);
   background-size: 500% 500%;
   opacity: 0;
-  -webkit-animation: anim-gradient 2s infinite alternate, anim-oh 400ms, anim-opacity 3000ms ease-out;
-          animation: anim-gradient 2s infinite alternate, anim-oh 400ms, anim-opacity 3000ms ease-out;
+  -webkit-animation: anim-gradient 2s infinite alternate, anim-oh 300ms, anim-opacity 3500ms ease-out;
+          animation: anim-gradient 2s infinite alternate, anim-oh 300ms, anim-opacity 3500ms ease-out;
 }
 
 .load__logo__myfood {
@@ -428,8 +503,8 @@ a {
   background-size: 500% 500%;
   padding-right: 1rem;
   opacity: 0;
-  -webkit-animation: anim-gradient 1500ms infinite alternate, anim-myfood calc($load-dur - 550ms) 550ms ease-in-out;
-          animation: anim-gradient 1500ms infinite alternate, anim-myfood calc($load-dur - 550ms) 550ms ease-in-out;
+  -webkit-animation: anim-gradient 1500ms infinite alternate, anim-myfood calc($load-dur - 525ms) 525ms ease-in-out;
+          animation: anim-gradient 1500ms infinite alternate, anim-myfood calc($load-dur - 525ms) 525ms ease-in-out;
 }
 
 .header {
@@ -502,11 +577,11 @@ a {
   }
 }
 
-.main--accueil {
+main {
   -webkit-animation: opacity-main 0ms both;
           animation: opacity-main 0ms both;
-  -webkit-animation-delay: 3000ms;
-          animation-delay: 3000ms;
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
 }
 
 @-webkit-keyframes opacity-main {
@@ -525,6 +600,30 @@ a {
   100% {
     opacity: 1;
   }
+}
+
+.localisation {
+  background: #eaeaea;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: inset 0px 4px 9px -6px #9c9c9c;
+          box-shadow: inset 0px 4px 9px -6px #9c9c9c;
+}
+
+.localisation__txt {
+  border: 0;
+  background: #eaeaea;
+  font-size: 1.1rem;
+  text-align: center;
+  outline: none;
 }
 
 .intro {
@@ -584,97 +683,6 @@ a {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-}
-
-.card {
-  width: 100%;
-  height: 250px;
-  border-radius: 15px;
-  margin: 0.5rem auto;
-  position: relative;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
-          box-shadow: 0px 5px 10px 2px rgba(156, 156, 156, 0.3);
-}
-
-.card__img {
-  width: 100%;
-  height: 70%;
-}
-
-.card__img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 15px 15px 0 0;
-}
-
-.card__contain {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem;
-}
-
-.card__txt {
-  margin: 0;
-}
-
-.card__title {
-  padding-bottom: 0.2rem;
-}
-
-.card__logo {
-  margin-right: 10px;
-}
-
-.card .spe {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.card:hover {
-  -webkit-box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
-          box-shadow: 0px 7px 10px 2px rgba(156, 156, 156, 0.6);
-}
-
-@media screen and (min-width: 768px) {
-  .card {
-    width: 45%;
-    /* si plus de 4 restaurants on fixera une 
-        max-width en px*/
-  }
-}
-
-.input {
-  background: #eaeaea;
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: inset 0px 4px 9px -6px #9c9c9c;
-          box-shadow: inset 0px 4px 9px -6px #9c9c9c;
-}
-
-.input__loc {
-  border: 0;
-  background: #eaeaea;
-  font-size: 1.1rem;
-  text-align: center;
-  outline: none;
 }
 
 .heading-section {
@@ -782,7 +790,28 @@ a {
   margin: 0 auto;
 }
 
-.menu__subtitle {
+@media screen and (min-width: 768px) {
+  .menu-contain {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.menu-part {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-part {
+    width: 32%;
+  }
+}
+
+.menu-part__subtitle {
   text-transform: uppercase;
   font-weight: 300;
   padding-bottom: 0.5rem;
@@ -792,19 +821,19 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-  .menu__subtitle {
+  .menu-part__subtitle {
     font-size: 1.4rem;
     -webkit-animation: animsubtitle-tablette 300ms both;
             animation: animsubtitle-tablette 300ms both;
   }
 }
 
-.menu__subtitle--1 {
+.menu-part__subtitle--1 {
   -webkit-animation-delay: 460ms;
           animation-delay: 460ms;
 }
 
-.menu__subtitle--2 {
+.menu-part__subtitle--2 {
   -webkit-animation-delay: 760ms;
           animation-delay: 760ms;
 }
@@ -833,16 +862,6 @@ a {
 .menu .hr--2 {
   -webkit-animation-delay: 850ms;
           animation-delay: 850ms;
-}
-
-.menu-part {
-  margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 768px) {
-  .menu-part {
-    width: 32%;
-  }
 }
 
 .menu-item {
@@ -952,6 +971,7 @@ a {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0.3rem;
+  margin-right: 0.4rem;
   font-size: 0.9rem;
   text-overflow: ellipsis;
 }
@@ -1001,17 +1021,6 @@ a {
 .menu-item:hover .check > i {
   -webkit-transform: rotate(0);
           transform: rotate(0);
-}
-
-@media screen and (min-width: 768px) {
-  .menu-contain {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
 }
 
 .menu-submit {

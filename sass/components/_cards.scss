@@ -38,8 +38,7 @@
   }
   
   &:hover{
-    @include shadow (7px, 0.6);
-    
+    @include shadow (7px, 0.6);  
   }
 
   @include tablette-bp {

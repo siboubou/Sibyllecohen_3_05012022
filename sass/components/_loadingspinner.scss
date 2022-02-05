@@ -1,4 +1,4 @@
-$load-dur: 3000ms;
+$load-dur: 3500ms;
 
 @keyframes anim-gradient{
     0%{
@@ -10,28 +10,29 @@ $load-dur: 3000ms;
         animation-timing-function: cubic-bezier(0.26, 0,.15,.84);
     }
 }
+@keyframes anim-oh{
+    50%{
+        transform: scale(6.5) translateX(30%);
+        animation-timing-function: cubic-bezier(0,.99,1,.99);
+    }
+    85%{
+        transform: scale(6.5) translateX(30%);
+    }
+}
+@keyframes anim-ring {
+    0% { 
+        transform: rotate(0deg); 
+    } 
+    100% { 
+        transform: rotate(360deg);
+    }
+}
 @keyframes anim-myfood{
     0%{
         opacity:0.4;
     }
     5%, 100%{
         opacity: 1;
-    }
-}
-@keyframes anim-oh{
-50%{
-    transform: scale(5.5) translateX(30%);
-    animation-timing-function: cubic-bezier(0,.99,1,.99);
-}
-
-}
-@keyframes anim-ring {
-    0% { 
-        transform: rotate(0deg); 
-    }
-   
-    100% { 
-        transform: rotate(360deg);
     }
 }
 @keyframes anim-opacity{
@@ -56,7 +57,7 @@ $load-dur: 3000ms;
     height: 310px;
     opacity: 0;
     animation: 
-        anim-ring 1200ms 800ms ease-in infinite,
+        anim-ring 1000ms 800ms ease-in infinite,
         anim-opacity calc($load-dur - 800ms) 800ms ease-out;  
 } 
 
@@ -80,7 +81,7 @@ $load-dur: 3000ms;
         opacity: 0;
         animation: 
             anim-gradient 2s infinite alternate,
-            anim-oh 400ms,
+            anim-oh 300ms,
             anim-opacity $load-dur ease-out;
 
     }
@@ -100,7 +101,7 @@ $load-dur: 3000ms;
         opacity: 0;
         animation: 
             anim-gradient 1500ms  infinite alternate,
-            anim-myfood calc($load-dur - 550ms) 550ms ease-in-out;
+            anim-myfood calc($load-dur - 525ms) 525ms ease-in-out;
             
     }
 }

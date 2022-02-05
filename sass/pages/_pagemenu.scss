@@ -62,24 +62,37 @@ $anim-delay: $anim-dur/ $num-plats;
   background-color: $color-bg-light;
   width: 100%;
   margin: 0 auto;
-  &__subtitle{
-    text-transform: uppercase;
-    font-weight: 300;
-    padding-bottom: 0.5rem;
-    font-size: 1.1rem;
-    animation: animsubtitle $animsubtitle-dur both;
+  &-contain{
     @include tablette-bp{
-      font-size: 1.4rem;
-      animation: animsubtitle-tablette $animsubtitle-dur both;
-    }
-
-    &--1{
-      animation-delay: 460ms;
-    }
-    &--2{
-      animation-delay: 760ms ;
-    }  
+      display: flex;
+      justify-content: space-between;
+     }
   }
+  &-part{
+    margin-bottom: 2rem;
+    @include tablette-bp{
+      width: 32%;
+    }
+    &__subtitle{
+      text-transform: uppercase;
+      font-weight: 300;
+      padding-bottom: 0.5rem;
+      font-size: 1.1rem;
+      animation: animsubtitle $animsubtitle-dur both;
+      @include tablette-bp{
+        font-size: 1.4rem;
+        animation: animsubtitle-tablette $animsubtitle-dur both;
+      }
+  
+      &--1{
+        animation-delay: 460ms;
+      }
+      &--2{
+        animation-delay: 760ms ;
+      }  
+    }
+  } 
+  
 
   .hr{
     background-color:$color-tertiary; 
@@ -98,12 +111,8 @@ $anim-delay: $anim-dur/ $num-plats;
       animation-delay: 850ms;
     } 
   }
-  &-part{
-    margin-bottom: 2rem;
-    @include tablette-bp{
-      width: 32%;
-    }
-  }  
+
+ 
 }
 
 .menu-item{
@@ -149,6 +158,7 @@ $anim-delay: $anim-dur/ $num-plats;
     white-space: nowrap;
     overflow: hidden;
     margin-top: 0.3rem;
+    margin-right: 0.4rem;
     font-size: 0.9rem;
     text-overflow: ellipsis;
   }
@@ -175,7 +185,6 @@ $anim-delay: $anim-dur/ $num-plats;
       transition: transform 600ms cubic-bezier(.31,.17,.48,1) ;
     }
   }
-
   &:hover .check{ 
     opacity: 1;
     width: 20%;
@@ -187,12 +196,7 @@ $anim-delay: $anim-dur/ $num-plats;
 
 
 
-.menu-contain{
-  @include tablette-bp{
-    display: flex;
-    justify-content: space-between;
-   }
-}
+
 .menu-submit{
   text-align: center;
   padding: 1rem;

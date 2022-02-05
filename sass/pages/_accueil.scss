@@ -1,4 +1,4 @@
-.main--accueil{  
+main{  
     animation: opacity-main 0ms both;
     animation-delay: $load-dur;
 
@@ -11,7 +11,20 @@
         opacity: 1;
     }
 }
-
+.localisation {
+    background: $color-bg-input;
+    height: 50px;
+    @include display-center;
+    box-shadow: inset 0px 4px 9px -6px rgba($color-shaddow, 1);
+    
+    &__txt {
+      border: 0;
+      background: $color-bg-input;
+      font-size: 1.1rem;
+      text-align: center;  
+      outline: none;
+    }
+  }
 .intro {
     background: $color-bg-light;
     text-align: center;
@@ -22,7 +35,6 @@
       padding: 2rem;
     }
 }
-
 .liste-fonctionnement{
     @include tablette-bp{
       display: flex;
