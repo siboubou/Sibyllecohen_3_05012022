@@ -444,18 +444,18 @@ main {
   }
 }
 
-.liste-restaurants {
+#liste-restaurants {
   background: #f6f6f6;
 }
-.liste-restaurants h1 {
+#liste-restaurants h1 {
   margin-bottom: 1rem;
 }
-.liste-restaurants .liste-cards {
+#liste-restaurants .liste-cards {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
-  .liste-restaurants .liste-cards {
+  #liste-restaurants .liste-cards {
     flex-direction: row;
     flex-wrap: wrap;
   }
