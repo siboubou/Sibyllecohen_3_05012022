@@ -411,13 +411,18 @@ main {
 .localisation {
   background: #eaeaea;
   height: 50px;
+  box-shadow: inset 0px 4px 9px -6px #9c9c9c;
+}
+.localisation__form {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0px 4px 9px -6px #9c9c9c;
+  padding: 0.8rem;
 }
-.localisation__txt {
+.localisation__select {
+  margin-left: 0.8rem;
   border: 0;
+  color: black;
   background: #eaeaea;
   font-size: 1.1rem;
   text-align: center;

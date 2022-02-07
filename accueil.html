@@ -36,14 +36,13 @@
       </header>
 
       <div class="localisation">
-        <form action="#">
+        <form class="localisation__form" method="post" action="#">
           <i id="localisation__logo" class="fas fa-map-marker-alt"></i>
-          <input
-            class="localisation__txt"
-            type="search"
-            name="localisation"
-            placeholder="Paris, Belleville"
-          />
+          <p>
+            <select class="localisation__select" name="localisation">
+              <option value="Paris, Belleville" selected>Paris, Belleville</option>
+            </select>
+          </p>
         </form>
       </div>
 
