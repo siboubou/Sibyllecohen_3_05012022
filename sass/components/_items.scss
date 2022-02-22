@@ -42,7 +42,8 @@
     background: lighten($color-primary, 34);
     opacity: 0;
   } 
-  &:hover{
+  &:hover,
+  &:focus{
     ::after{
       opacity: 1;
     }  

@@ -37,7 +37,8 @@
     top: 0;
   }
   
-  &:hover{
+  &:hover,
+  &:focus{
     @include shadow (7px, 0.6);  
   }
 

@@ -20,7 +20,8 @@
       transform-origin: center 100%;
       transition: transform 250ms linear;
     }
-    &:hover{
+    &:hover,
+    &:focus{
         & > .far{
             opacity: 0;
         }

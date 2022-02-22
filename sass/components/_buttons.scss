@@ -13,7 +13,8 @@
     padding: 1rem 3.5rem;
   }
   
-  &:hover {
+  &:hover,
+  &:focus {
     opacity:0.8;
     @include shadow (7px, 0.6);
   }
